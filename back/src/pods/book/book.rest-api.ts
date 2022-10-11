@@ -12,8 +12,6 @@ export const booksApi = Router();
 booksApi
   .get('/', authorizationMiddleware(), async (req, res, next) => {
     try {
-      const book = undefined;
-      book.name;
       const page = Number(req.query.page);
       const pageSize = Number(req.query.pageSize);
       const bookList = await bookRepository.getBookList(page, pageSize);
